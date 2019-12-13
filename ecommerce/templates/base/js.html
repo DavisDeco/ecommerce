@@ -1,0 +1,32 @@
+{% load static %}
+<!-- add jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- add ajax cdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Stripe JS -->
+<script src="https://js.stripe.com/v3/"></script>
+
+<!-- jquery confirm js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+<!-- js render -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.2/jsrender.min.js"></script>
+  <!-- add custom js render scripts -->
+  {% include "base/js_templates.html" %}
+
+<!-- ecommerce custom js -->
+<script src='{% static "js/ecommerce.js" %}'></script>
+
+<!-- ecommerce custom js for stripe and billing payment -->
+<script src='{% static "js/ecomerce.stripe.js" %}'></script>
+
+<!-- Django secure Ajax js -->
+<script src='{% static "js/csrf.ajax.js" %}'></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+

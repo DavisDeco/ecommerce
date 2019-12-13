@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}    
+  {% endblock title %}  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "base/css.html" %}
+  {% include "base/js.html" %}
+  
+</head>
+<body>
+
+    <!-- include navigation bar -->
+    {% include "base/navbar.html" with brand_name='eCommerce' %}
+
+<div class="jumbotron text-center">
+
+  <!-- div to receive all session messages -->
+  {% if messages  %}
+    <div class="alert alert-success messages">
+      
+      {% for message in messages %}
+        <span {% if message.tags  %} class="message" {% endif %}>
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} Important: {% endif %}
+           {{message}} <br/>
+        </span>
+      {% endfor %}
+    </div>
+    
+  {% endif %}
+  <!--end div to receive all session messages -->
+    
+  <h1>ucp</h1>
+  <p>Develop jasmin!</p> 
+</div>
+  
+<div class="container">
+
+    
+  <div>
+       
+       {% block content %}           
+       {% endblock content %} 
+
+  </div>
+</div>
+{% block javascript %}
+  
+{% endblock javascript %}
+
+<!-- special script to enable dropdown-menu -->
+<script>
+    $('.dropdown').click(function(){
+
+      $('.dropdown-menu').toggleClass('show');
+
+     });
+</script>
+<!-- end special script to enable dropdown-menu -->
+
+
+</body>
+</html>

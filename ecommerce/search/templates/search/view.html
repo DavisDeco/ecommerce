@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- displays a search statement -->
+    <!-- <div class="row"> -->
+        {% if query %}
+            <div class="col-12 mb-3">
+                Results for <strong>{{ query}} </strong>
+                <hr/>
+            </div>  
+        {% else %}
+            <!-- <div class="col-12 col-md-8 ">
+                <input type="text" class="form-control" placeholder="Search Product">
+            </div>     -->
+            
+        {% endif %}
+    <!-- </div> -->
+    
+
+
+
+
+
+    {% for obj in object_list  %}
+        <!-- <div class="row"> -->
+            <div class="col-sm-4">
+                {% include "products/snippets/card.html" with instance=obj %}
+            </div>
+        <!-- </div> -->
+    {% endfor %}
+{% endblock content %}
+
+ 

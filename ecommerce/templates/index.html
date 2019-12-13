@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  <title>Nunua Home</title>
+{% endblock title %}
+
+{% block content %}
+  <div class="col-sm-4">
+    {% if request.user.is_authenticated %}
+       <h3>Premium content</h3>   
+
+      <p>{{ premium_content }}</p>
+    {% endif %}
+    
+  </div>
+  
+{% endblock content %}
+  
+
+
+
+

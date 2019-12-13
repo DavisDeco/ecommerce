@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+        {{ obj.title }} <br/> 
+        Posted: {{ obj.timestamp | timesince}} ago <br/>
+        {{ obj.description | linebreaks }} <br>
+        {{ obj.price }}
+    </p>    
+    {% if obj.image %}
+        <img src="{{ obj.image.url }}" height="400" width="400"  class="img-fluid" alt="">
+    {% endif %}
+
+    {% include "products/snippets/update-cart.html" with product=obj cart=cart %}
+
+  
+{% endblock content %}
